@@ -1,7 +1,16 @@
 import { useState, useEffect } from 'react';
 
-export function useFetch(url) {
-    const [data, setData] = useState(null);
+interface UserData {
+    name: string;
+    surname: string;
+}
+
+interface UseFetchReturn {
+    data: UserData | null
+}
+
+export function useFetch(url: string): UseFetchReturn {
+    const [data, setData] = useState<UserData | null>(null);
 
     useEffect(() => {
         // fetch server using url

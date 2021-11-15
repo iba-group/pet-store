@@ -5,14 +5,14 @@ import Foto from './foto';
 import Box from '@mui/material/Box';
 import { useFetch } from '../hooks/useFetch';
 
-export default function Profile(props) {
+export default function Profile(props: any) {
   const { data: user } = useFetch('someUrl');
 
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
 
-  const onNameChange = (event) => setName(event.target.value);
-  const onSurnameChange = (event) => setSurname(event.target.value);
+  const onNameChange = (event: any) => setName(event.target.value);
+  const onSurnameChange = (event: any) => setSurname(event.target.value);
 
   useEffect(() => console.log(`name: ${name}, surname: ${surname}`));
 
